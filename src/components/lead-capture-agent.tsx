@@ -224,7 +224,7 @@ export function LeadCaptureAgent() {
 
       {/* Chat Widget */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 flex h-[560px] w-[380px] flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-2xl shadow-charcoal/10 sm:w-[400px]">
+        <div className="fixed bottom-6 right-6 z-50 flex h-[560px] max-h-[calc(100vh-3rem)] w-[380px] flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-2xl shadow-charcoal/10 sm:w-[400px]">
           {/* Header */}
           <div className="flex items-center justify-between bg-charcoal px-4 py-3">
             <div className="flex items-center gap-2.5">
