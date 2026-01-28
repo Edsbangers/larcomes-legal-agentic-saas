@@ -7,6 +7,8 @@ export const scoutSources = [
   { name: "UK Gov News", url: "gov.uk/government/news" },
   { name: "Judiciary of England & Wales", url: "judiciary.uk" },
   { name: "SRA Updates", url: "sra.org.uk" },
+  { name: "FCA Regulatory Feed", url: "fca.org.uk" },
+  { name: "HMCTS Digital Services", url: "hmcts.service.gov.uk" },
 ];
 
 // ─── Non-branded keyword map per practice area ──────────────────────────────
@@ -205,48 +207,51 @@ If you're planning to buy, now is the time to take advantage.`,
 };
 
 // ─── Discovery pool — updates the scout will "find" over time ───────────────
+// Based on real January 2026 regulatory shifts affecting UK solicitors
 export const scoutDiscoveryPool: Omit<ScoutLegalUpdate, "discoveredAt">[] = [
   {
     id: "LU-006",
-    title: "Renters Reform Bill: Section 21 Abolished",
+    title: "Renters' Rights Act 2025: Section 21 Abolished from 1 May 2026",
     source: "UK Government",
-    sourceUrl: "https://www.gov.uk/government/news/renters-reform",
+    sourceUrl: "https://www.gov.uk/government/news/renters-rights-act",
     publishedAt: "2026-01-28T08:00:00Z",
-    category: "Property Law",
+    category: "Residential Property",
     summary:
-      "The Renters Reform Bill has received Royal Assent. Section 21 no-fault evictions are abolished. New mandatory grounds for possession introduced. Tenants gain pet rights. A new Private Rented Sector Ombudsman established.",
+      "The Renters' Rights Act 2025 is entering a critical implementation phase. From 1 May 2026, Section 21 'no-fault' evictions will be formally abolished, and ALL existing assured shorthold tenancies must be converted to periodic tenancies. Landlords face a hard deadline to restructure their tenancy agreements.",
     impact: "high",
     draftAlert:
-      "Major changes for landlords and tenants — Section 21 evictions abolished under the Renters Reform Bill.",
+      "Section 21 no-fault evictions abolished from 1 May 2026 — landlords must convert all ASTs to periodic tenancies.",
     linkedInDraft: {
-      hook: "If you're a landlord or tenant in England, this changes everything.",
-      body: `The Renters Reform Bill has received Royal Assent, fundamentally reshaping the landlord-tenant relationship.
+      hook: "Landlords: you have until 1 May 2026 to restructure EVERY tenancy agreement you hold.",
+      body: `The Renters' Rights Act 2025 is entering its most critical phase. Here's what's happening:
 
-Here's what you need to know:
+From 1 May 2026:
 
-1. Section 21 "no-fault" evictions are abolished
-2. New mandatory grounds for possession have been introduced
-3. Tenants gain the right to request pets
-4. A new Private Rented Sector Ombudsman will be established
-5. Landlords must join a new property portal
+1. Section 21 "no-fault" evictions are formally abolished
+2. ALL existing assured shorthold tenancies (ASTs) must convert to periodic tenancies
+3. New mandatory possession grounds replace the old Section 21 process
+4. Tenants gain the right to request pets (landlords can't unreasonably refuse)
+5. A new Private Rented Sector Ombudsman becomes mandatory for all landlords
+6. Rent increases limited to once per year via a formal Section 13 notice
 
-For landlords: review your tenancy agreements NOW.
-For tenants: you now have significantly stronger protections.`,
+This isn't coming — it's HERE. Landlords who haven't reviewed their tenancy agreements are running out of time.
+
+For tenants: your protections are about to become significantly stronger. No more "no-fault" evictions.`,
       callToAction:
-        "Need advice on how these changes affect you? Our property law team at Larcomes Solicitors can help you navigate the new rules. Book a free initial consultation — link in comments.",
+        "Whether you're a landlord needing to restructure agreements or a tenant wanting to understand your new rights, our property team at Larcomes Solicitors can help. Book a consultation before the May deadline — link in comments.",
       hashtags: [
-        "#RentersReform",
-        "#PropertyLaw",
+        "#RentersRightsAct",
+        "#Section21",
         "#LandlordAdvice",
         "#TenantRights",
-        "#Section21",
+        "#PropertyLaw",
       ],
       nonBrandedKeywords: [
         "property solicitor near me",
         "landlord legal advice",
-        "tenant rights UK",
+        "tenant rights UK 2026",
         "section 21 eviction abolished",
-        "renters reform bill 2026",
+        "assured shorthold tenancy solicitor",
       ],
       practiceArea: "conveyancing",
       estimatedReadTime: "< 1 min read",
@@ -256,10 +261,210 @@ For tenants: you now have significantly stronger protections.`,
   },
   {
     id: "LU-007",
-    title: "Digital LPA Service: New Online Registration",
+    title: "Mandatory Property Information Forms: 30 March 2026 Deadline",
+    source: "The Law Society",
+    sourceUrl: "https://www.lawsociety.org.uk/topics/property/conveyancing-forms",
+    publishedAt: "2026-01-28T10:30:00Z",
+    category: "Conveyancing",
+    summary:
+      "New versions of the standard property information forms (TA6, TA7, TA10) become mandatory on 30 March 2026. The government is also expected to publish a 'Conveyancing Roadmap' in H1 2026 to enforce upfront 'Material Information' disclosure from sellers at the point of marketing.",
+    impact: "high",
+    draftAlert:
+      "New mandatory property information forms from 30 March 2026 — sellers must provide upfront Material Information.",
+    linkedInDraft: {
+      hook: "Selling a property in 2026? The information you MUST provide upfront is about to change dramatically.",
+      body: `Two major conveyancing changes are converging this spring:
+
+1. Mandatory new property forms (30 March 2026)
+
+Updated versions of TA6 (Property Information), TA7 (Leasehold Information), and TA10 (Fittings & Contents) become compulsory. The new forms require significantly more detail on:
+- Energy performance and retrofit obligations
+- Flooding and environmental risks
+- Service charge and ground rent history (leasehold)
+- Planning permissions and building regulation compliance
+
+2. The "Conveyancing Roadmap" (expected H1 2026)
+
+The government plans to enforce upfront "Material Information" from sellers at the point of marketing — not after an offer is accepted. Estate agents will be required to verify this information before listing.
+
+This is the biggest shake-up in property transaction transparency in decades.`,
+      callToAction:
+        "Planning to sell? Our conveyancing team at Larcomes can help you prepare compliant documentation before the deadline. Avoid delays — get ahead now. Link in comments.",
+      hashtags: [
+        "#Conveyancing",
+        "#PropertyForms",
+        "#MaterialInformation",
+        "#HouseSelling",
+        "#PropertyLaw2026",
+      ],
+      nonBrandedKeywords: [
+        "conveyancing solicitor near me",
+        "selling house solicitor",
+        "property solicitor fees",
+        "conveyancing forms 2026",
+        "material information property",
+      ],
+      practiceArea: "conveyancing",
+      estimatedReadTime: "< 1 min read",
+    },
+    status: "new",
+    isNew: true,
+  },
+  {
+    id: "LU-008",
+    title: "Upward-Only Rent Review Ban: Commercial Lease Reform in Parliament",
+    source: "UK Government",
+    sourceUrl: "https://www.gov.uk/government/news/commercial-lease-reform",
+    publishedAt: "2026-01-28T12:00:00Z",
+    category: "Commercial Property",
+    summary:
+      "A proposed ban on upward-only rent reviews is currently moving through Parliament. If enacted, it will fundamentally change how commercial leases are drafted, allowing rents to move both up AND down at review. Landlords and tenants with existing upward-only clauses should seek advice on transitional provisions.",
+    impact: "high",
+    draftAlert:
+      "Upward-only rent reviews face a ban — commercial lease drafting will fundamentally change.",
+    linkedInDraft: {
+      hook: "If you hold a commercial lease, the way your rent is reviewed is about to change forever.",
+      body: `A bill to ban upward-only rent reviews in commercial leases is moving through Parliament — and it could transform the commercial property market.
+
+What this means:
+
+1. Rent reviews would allow rents to go DOWN as well as up
+2. New leases cannot include upward-only clauses
+3. Existing leases may be subject to transitional provisions
+4. Open market rent reviews become the standard
+5. Turnover-based rent models may become more common
+
+For commercial landlords: this fundamentally changes your investment model and lease drafting strategy.
+
+For tenants: if your business faces a downturn, your rent could actually decrease at the next review — a protection that doesn't currently exist.
+
+The bill is at committee stage and progressing. Now is the time to understand the implications.`,
+      callToAction:
+        "Need to review your commercial lease arrangements? Our commercial property team at Larcomes can advise on existing clauses and future-proof your position. Get in touch — link in comments.",
+      hashtags: [
+        "#CommercialProperty",
+        "#RentReview",
+        "#CommercialLease",
+        "#LandlordAndTenant",
+        "#PropertyLaw",
+      ],
+      nonBrandedKeywords: [
+        "commercial property solicitor",
+        "lease negotiation solicitor",
+        "business premises legal advice",
+        "commercial rent review solicitor",
+        "commercial lease solicitor near me",
+      ],
+      practiceArea: "commercial",
+      estimatedReadTime: "< 1 min read",
+    },
+    status: "new",
+    isNew: true,
+  },
+  {
+    id: "LU-009",
+    title: "FCA Takeover of AML Oversight from SRA: Major Compliance Shift",
+    source: "FCA Regulatory Feed",
+    sourceUrl: "https://www.fca.org.uk/news/statements/aml-legal-sector-oversight",
+    publishedAt: "2026-01-28T14:00:00Z",
+    category: "Compliance & Regulation",
+    summary:
+      "The Financial Conduct Authority (FCA) is taking over Anti-Money Laundering oversight from the Solicitors Regulation Authority (SRA) in 2026. This creates a significant new compliance burden for law firms, with FCA-standard due diligence, reporting, and supervisory frameworks replacing the current SRA regime. Firms face new registration, staffing, and system requirements.",
+    impact: "high",
+    draftAlert:
+      "FCA taking over AML oversight from SRA in 2026 — major new compliance requirements for all law firms.",
+    linkedInDraft: {
+      hook: "Every law firm in England & Wales is about to answer to a new AML regulator. And the bar is going up.",
+      body: `The FCA is taking over Anti-Money Laundering supervision from the SRA in 2026 — and this is one of the biggest regulatory shifts the legal profession has faced.
+
+What changes for law firms:
+
+1. FCA registration required — separate from SRA authorisation
+2. FCA-standard enhanced due diligence replaces SRA guidance
+3. Suspicious Activity Report (SAR) processes must meet FCA benchmarks
+4. Annual compliance returns and financial crime data submissions
+5. Risk-based supervision — firms handling property and estates face the highest scrutiny
+6. Potential for direct FCA investigations and enforcement
+
+For conveyancing and probate firms, this is critical. Property transactions are the highest-risk area for money laundering, and the FCA's approach is significantly more rigorous than the SRA's.
+
+The transition timeline is tight. Firms need to prepare NOW.`,
+      callToAction:
+        "At Larcomes, we're already preparing for the FCA transition. Our compliance team ensures every transaction meets the highest AML standards — protecting you and your assets. Learn more about our approach — link in comments.",
+      hashtags: [
+        "#AML",
+        "#FCA",
+        "#LegalCompliance",
+        "#MoneyLaundering",
+        "#SolicitorRegulation",
+      ],
+      nonBrandedKeywords: [
+        "conveyancing solicitor near me",
+        "AML compliance solicitor",
+        "property fraud protection",
+        "FCA regulated solicitor",
+        "money laundering checks property",
+      ],
+      practiceArea: "conveyancing",
+      estimatedReadTime: "< 1 min read",
+    },
+    status: "new",
+    isNew: true,
+  },
+  {
+    id: "LU-010",
+    title: "Cohabitation Rights Bill: First Reading in Parliament",
+    source: "UK Government",
+    sourceUrl: "https://www.gov.uk/government/news/cohabitation-rights",
+    publishedAt: "2026-01-28T15:30:00Z",
+    category: "Family Law",
+    summary:
+      "A new Cohabitation Rights Bill has been introduced to Parliament. If passed, it would give unmarried cohabiting couples legal rights to financial provision on separation, similar to those available on divorce. With 3.6 million cohabiting couples in England and Wales, the impact would be substantial.",
+    impact: "high",
+    draftAlert:
+      "Cohabitation Rights Bill introduced — unmarried couples could gain financial rights on separation.",
+    linkedInDraft: {
+      hook: "Living with your partner but not married? Your legal rights could be about to change dramatically.",
+      body: `A Cohabitation Rights Bill has been introduced to Parliament — and it could transform the legal landscape for the 3.6 million cohabiting couples in England and Wales.
+
+Currently, unmarried partners have almost NO automatic legal rights when a relationship ends. No matter how long you've lived together.
+
+The proposed changes:
+
+1. Cohabiting partners could apply for financial provision on separation
+2. Rights would apply after 2+ years of cohabitation (or if you have children)
+3. Property, pensions, and maintenance could all be considered
+4. Opt-out agreements would be available
+
+This bill still has a long Parliamentary journey, but it signals a significant shift in thinking.`,
+      callToAction:
+        "Whether this bill passes or not, protecting yourself legally is essential. Our family law team at Larcomes can advise on cohabitation agreements, trusts, and property protection. Get in touch — link in comments.",
+      hashtags: [
+        "#CohabitationRights",
+        "#FamilyLaw",
+        "#UnmarriedCouples",
+        "#LegalRights",
+        "#CohabitationAgreement",
+      ],
+      nonBrandedKeywords: [
+        "cohabitation agreement solicitor",
+        "unmarried couple property rights",
+        "divorce solicitor near me",
+        "family solicitor near me",
+        "cohabitation rights UK",
+      ],
+      practiceArea: "divorce",
+      estimatedReadTime: "< 1 min read",
+    },
+    status: "new",
+    isNew: true,
+  },
+  {
+    id: "LU-011",
+    title: "Digital LPA Service: Processing Times Cut from 20 Weeks to 6",
     source: "The Law Society",
     sourceUrl: "https://www.lawsociety.org.uk/topics/lpa",
-    publishedAt: "2026-01-28T10:30:00Z",
+    publishedAt: "2026-01-28T16:45:00Z",
     category: "Wills & Trusts",
     summary:
       "The Office of the Public Guardian launches a fully digital LPA registration service. Applications can now be completed, witnessed, and registered entirely online, reducing processing times from 20 weeks to 6 weeks.",
@@ -302,110 +507,11 @@ With an ageing population and increasing awareness of mental capacity planning, 
     isNew: true,
   },
   {
-    id: "LU-008",
-    title: "Cohabitation Rights Bill: First Reading in Parliament",
-    source: "UK Government",
-    sourceUrl: "https://www.gov.uk/government/news/cohabitation-rights",
-    publishedAt: "2026-01-28T12:00:00Z",
-    category: "Family Law",
-    summary:
-      "A new Cohabitation Rights Bill has been introduced to Parliament. If passed, it would give unmarried cohabiting couples legal rights to financial provision on separation, similar to those available on divorce.",
-    impact: "high",
-    draftAlert:
-      "Cohabitation Rights Bill introduced — unmarried couples could gain financial rights on separation.",
-    linkedInDraft: {
-      hook: "Living with your partner but not married? Your legal rights could be about to change dramatically.",
-      body: `A Cohabitation Rights Bill has been introduced to Parliament — and it could transform the legal landscape for the 3.6 million cohabiting couples in England and Wales.
-
-Currently, unmarried partners have almost NO automatic legal rights when a relationship ends. No matter how long you've lived together.
-
-The proposed changes:
-
-1. Cohabiting partners could apply for financial provision on separation
-2. Rights would apply after 2+ years of cohabitation (or if you have children)
-3. Property, pensions, and maintenance could all be considered
-4. Opt-out agreements would be available
-
-This bill still has a long Parliamentary journey, but it signals a significant shift in thinking.`,
-      callToAction:
-        "Whether this bill passes or not, protecting yourself legally is essential. Our family law team at Larcomes can advise on cohabitation agreements, trusts, and property protection. Get in touch — link in comments.",
-      hashtags: [
-        "#CohabitationRights",
-        "#FamilyLaw",
-        "#UnmarriedCouples",
-        "#LegalRights",
-        "#CohabitationAgreement",
-      ],
-      nonBrandedKeywords: [
-        "cohabitation agreement solicitor",
-        "unmarried couple property rights",
-        "divorce solicitor near me",
-        "family solicitor near me",
-        "cohabitation rights UK",
-      ],
-      practiceArea: "divorce",
-      estimatedReadTime: "< 1 min read",
-    },
-    status: "new",
-    isNew: true,
-  },
-  {
-    id: "LU-009",
-    title: "Probate Fees Restructured: New Sliding Scale",
-    source: "UK Government",
-    sourceUrl: "https://www.gov.uk/government/news/probate-fees",
-    publishedAt: "2026-01-28T14:00:00Z",
-    category: "Probate",
-    summary:
-      "The Ministry of Justice has announced a restructured probate fee system. Fees will now operate on a sliding scale based on estate value, replacing the current flat-fee structure. Estates under £5,000 remain exempt.",
-    impact: "medium",
-    draftAlert:
-      "Probate fees moving to a sliding scale based on estate value — could cost more for larger estates.",
-    linkedInDraft: {
-      hook: "The cost of probate is changing — and depending on the estate, it could cost significantly more.",
-      body: `The Ministry of Justice has announced a restructured probate fee system moving from a flat fee to a sliding scale.
-
-The new proposed fee structure:
-
-- Estates under £5,000: No fee (unchanged)
-- £5,000 – £50,000: £250
-- £50,000 – £100,000: £500
-- £100,000 – £250,000: £1,000
-- £250,000 – £500,000: £2,500
-- £500,000 – £1m: £4,000
-- Over £1m: £6,000
-
-For context, the current fee is just £273 for all estates.
-
-This represents a significant increase for larger estates and underscores the importance of proper estate planning.`,
-      callToAction:
-        "Concerned about how new probate fees could affect your estate? Our probate and estate planning team at Larcomes can help you plan ahead. Contact us for a confidential discussion — link in comments.",
-      hashtags: [
-        "#ProbateFees",
-        "#EstateAdministration",
-        "#ProbateSolicitor",
-        "#EstatePlanning",
-        "#InheritanceTax",
-      ],
-      nonBrandedKeywords: [
-        "probate solicitor near me",
-        "grant of probate cost",
-        "how to apply for probate",
-        "probate fees 2026",
-        "estate administration help",
-      ],
-      practiceArea: "probate",
-      estimatedReadTime: "< 1 min read",
-    },
-    status: "new",
-    isNew: true,
-  },
-  {
-    id: "LU-010",
+    id: "LU-012",
     title: "Employment Rights Bill: Day-One Unfair Dismissal Protection",
     source: "UK Government",
     sourceUrl: "https://www.gov.uk/government/news/employment-rights-bill",
-    publishedAt: "2026-01-28T15:30:00Z",
+    publishedAt: "2026-01-28T17:30:00Z",
     category: "Employment Law",
     summary:
       "The Employment Rights Bill introduces day-one protection against unfair dismissal, replacing the current two-year qualifying period. The bill also bans zero-hours contracts and introduces fire-and-rehire restrictions.",
@@ -444,53 +550,6 @@ For employees: significantly stronger protections from your very first day.`,
         "workplace rights solicitor",
       ],
       practiceArea: "litigation",
-      estimatedReadTime: "< 1 min read",
-    },
-    status: "new",
-    isNew: true,
-  },
-  {
-    id: "LU-011",
-    title: "Land Registry Digital Transformation: E-Signatures Accepted",
-    source: "The Law Society",
-    sourceUrl: "https://www.lawsociety.org.uk/topics/property",
-    publishedAt: "2026-01-28T16:45:00Z",
-    category: "Property Law",
-    summary:
-      "HM Land Registry now accepts qualified electronic signatures for property transfers and dispositions. This eliminates the need for wet-ink signatures on most conveyancing documents, significantly speeding up the completion process.",
-    impact: "medium",
-    draftAlert:
-      "Land Registry now accepts e-signatures for property transfers — completions set to speed up significantly.",
-    linkedInDraft: {
-      hook: "You can now buy or sell a house without a single wet-ink signature.",
-      body: `HM Land Registry has officially confirmed that qualified electronic signatures are now accepted for property transfers and dispositions.
-
-What this means for your property transaction:
-
-1. No need to print, sign, and post documents
-2. Completions can happen faster — potentially same-day
-3. Reduced risk of documents being lost in the post
-4. Easier for parties living abroad or unable to attend in person
-5. Full legal validity — equivalent to wet-ink signatures
-
-This is the biggest modernisation of the conveyancing process in years and will make buying and selling property significantly smoother.`,
-      callToAction:
-        "Ready to buy or sell? Our conveyancing team at Larcomes is set up for fully digital transactions. Get a fixed-fee quote today — link in comments.",
-      hashtags: [
-        "#Conveyancing",
-        "#PropertyLaw",
-        "#ESignatures",
-        "#LegalTech",
-        "#HouseBuying",
-      ],
-      nonBrandedKeywords: [
-        "conveyancing solicitor near me",
-        "house buying solicitor",
-        "property solicitor fees",
-        "conveyancing quote",
-        "first-time buyer solicitor",
-      ],
-      practiceArea: "conveyancing",
       estimatedReadTime: "< 1 min read",
     },
     status: "new",
