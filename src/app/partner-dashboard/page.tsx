@@ -3,7 +3,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { auditStats, sampleLeads, legalUpdates } from "@/lib/data";
+import { auditStats, sampleLeads } from "@/lib/data";
+import { useScout } from "@/lib/scout-context";
 import {
   Users,
   TrendingUp,
@@ -17,6 +18,8 @@ import {
   AlertTriangle,
   CheckCircle,
   Clock,
+  Radio,
+  Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -52,9 +55,11 @@ const overviewCards = [
 ];
 
 export default function DashboardOverview() {
+  const { discoveredUpdates, isScanning, newCount, events } = useScout();
   const newLeads = sampleLeads.filter((l) => l.status === "new");
-  const recentUpdates = legalUpdates.filter((u) => u.status === "new");
+  const recentUpdates = discoveredUpdates.filter((u) => u.status === "new").slice(0, 3);
   const highUrgency = sampleLeads.filter((l) => l.urgency === "high");
+  const latestEvent = events[0];
 
   return (
     <div className="space-y-6">
@@ -226,13 +231,34 @@ export default function DashboardOverview() {
           </CardContent>
         </Card>
 
-        {/* Legal Updates */}
+        {/* Legal Updates — Live Scout */}
         <Card className="border-border/50">
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
               <CardTitle className="flex items-center gap-2 text-base">
                 <Newspaper className="h-4 w-4 text-gold" />
                 Legal Update Scout
+                <div className="flex items-center gap-1.5 ml-1">
+                  <div className="relative">
+                    <Radio
+                      className={`h-3.5 w-3.5 ${isScanning ? "text-emerald-500" : "text-gold"}`}
+                    />
+                    {isScanning && (
+                      <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 scout-pulse" />
+                    )}
+                  </div>
+                  <Badge
+                    variant="outline"
+                    className={`text-[9px] ${isScanning ? "border-emerald-200 bg-emerald-50 text-emerald-700" : "border-gold/30 bg-gold/10 text-gold-dark"}`}
+                  >
+                    {isScanning ? "Live" : "Idle"}
+                  </Badge>
+                  {newCount > 0 && (
+                    <Badge className="text-[9px] bg-gold text-charcoal border-0 scout-pulse">
+                      +{newCount} new
+                    </Badge>
+                  )}
+                </div>
               </CardTitle>
               <Link
                 href="/partner-dashboard/legal-updates"
@@ -243,24 +269,40 @@ export default function DashboardOverview() {
             </div>
           </CardHeader>
           <CardContent>
+            {/* Latest agent activity */}
+            {latestEvent && (
+              <div className="mb-3 flex items-center gap-2 rounded-lg bg-secondary/50 px-3 py-2">
+                <Sparkles className="h-3 w-3 text-gold shrink-0" />
+                <p className="text-[11px] text-muted-foreground truncate">
+                  {latestEvent.message}
+                </p>
+              </div>
+            )}
             <div className="space-y-3">
               {recentUpdates.map((update) => (
                 <div
                   key={update.id}
-                  className="rounded-lg border border-border/50 p-3"
+                  className={`rounded-lg border border-border/50 p-3 transition-all ${update.isNew ? "scout-entry-animate border-gold/30 bg-gold/5" : ""}`}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <p className="text-sm font-medium text-charcoal">
                       {update.title}
                     </p>
-                    <Badge
-                      variant={
-                        update.impact === "high" ? "destructive" : "secondary"
-                      }
-                      className="shrink-0 text-[10px]"
-                    >
-                      {update.impact}
-                    </Badge>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      {update.isNew && (
+                        <Badge className="text-[9px] bg-emerald-500 text-white border-0">
+                          NEW
+                        </Badge>
+                      )}
+                      <Badge
+                        variant={
+                          update.impact === "high" ? "destructive" : "secondary"
+                        }
+                        className="text-[10px]"
+                      >
+                        {update.impact}
+                      </Badge>
+                    </div>
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
                     {update.source} &bull;{" "}
@@ -268,6 +310,11 @@ export default function DashboardOverview() {
                   </p>
                 </div>
               ))}
+              {recentUpdates.length === 0 && (
+                <p className="py-3 text-center text-xs text-muted-foreground">
+                  No new updates — scout is monitoring.
+                </p>
+              )}
             </div>
           </CardContent>
         </Card>
